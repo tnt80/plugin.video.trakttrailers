@@ -9,14 +9,14 @@
         "Search": [
           {
             "site_url": "https://trakt.tv/search/movies?query=death",
-            "pattern": "data-movie-id=\"{*}\"{*}<meta content=\"{%}\"{*}<img class=\"real\" data-original=\"{%}\"{*}<h3>{%}<span class=\"year\">{%}</span></h3>",
+            "pattern": "data-movie-id={*}<meta content=\"{%}\"{*}data-original=\"{%}\"{*}<h3>{%}<span class=\"year\">{%}</span></h3>",
             "name": "[B]{%3} | [COLOR lime]{%4}[/COLOR][/B]",
             "url": "{%1}",
             "poster": "{%2}",
 			"fanart": "{%2}"
           },
           {
-            "pattern": "<div data-spoiler-movie-id=\"{*}\"><div id=\"tagline\">{%}</div><div id=\"overview\" itemprop=\"description\"><p>{%}</p>{*}trailer\" target=\"_blank\" href=\"{%}\">{*}data-fanart=\"{%}\" data-full-title=\"{%}\"",
+            "pattern": "<div data-spoiler-movie-id={*}tagline\">{%}</div>{*}</div><p>{%}</p>{*}href=\"{%}\">{*}data-fanart=\"{%}\" data-full-title=\"{%}\"",
             "name": "[B][COLOR lime]Play Trailer[/COLOR] [COLOR gold]->[/COLOR] {%5}[/B]",
             "url": "{%3}",
             "poster": "{%4}",
@@ -34,7 +34,7 @@
         "[B][COLOR gold]Trakt[/COLOR] Trending Movies[/B]": [
           {
             "site_url": "https://trakt.tv/movies/trending",
-            "pattern": "data-movie-id=\"{*}\"{*}<meta content=\"{%}\"{*}<img class=\"real\" data-original=\"{%}\"{*}<h4>{%}</h4><h3>{%}<span class=\"year\">{%}</span></h3>",
+            "pattern": "data-movie-id={*}<meta content=\"{%}\"{*}<img class=\"real\" data-original=\"{%}\"{*}<h4>{%}</h4><h3>{%}<span class=\"year\">{%}</span></h3>",
             "name": "[B]{%4} | [COLOR lime]{%5}[/COLOR][/B]",
             "url": "{%1}",
             "poster": "{%2}",
@@ -44,12 +44,12 @@
             "next_url": "https://trakt.tv{%1}"
           },
           {
-            "pattern": "<div data-spoiler-movie-id=\"{*}\"><div id=\"tagline\">{%}</div><div id=\"overview\" itemprop=\"description\"><p>{%}</p>{*}trailer\" target=\"_blank\" href=\"{%}\">{*}data-fanart=\"{%}\" data-full-title=\"{%}\"",
-            "name": "[B][COLOR lime]Play Trailer[/COLOR] [COLOR gold]->[/COLOR] {%5}[/B]",
-            "url": "{%3}",
-            "poster": "{%4}",
-			"fanart": "{%4}",
-			"plot": "[COLOR gold]{%1}[/COLOR] | [COLOR gold]{%2}[/COLOR]"
+            "pattern": "trailer\" target=\"_blank\" href=\"{%}\">{*}data-fanart=\"{%}\" data-full-title=\"{%}\"",
+            "name": "[B][COLOR lime]Play Trailer[/COLOR] [COLOR gold]->[/COLOR] {%3}[/B]",
+            "url": "{%1}",
+            "poster": "{%2}",
+			"fanart": "{%2}",
+			"plot": "[COLOR gold]Play Trailer[/COLOR]"
           }
         ]
       }
@@ -62,7 +62,7 @@
         "[B][COLOR gold]Trakt[/COLOR] Popular Movies[/B]": [
           {
             "site_url": "https://trakt.tv/movies/popular",
-            "pattern": "data-movie-id=\"{*}\"{*}<meta content=\"{%}\"{*}<img class=\"real\" data-original=\"{%}\"{*}<h3>{%}<span class=\"year\">{%}</span></h3>",
+            "pattern": "data-movie-id={*}<meta content=\"{%}\" itemprop=\"url\">{*}data-original=\"{%}\"{*}<h3>{%}<span class=\"year\">{%}</span>",
             "name": "[B]{%3} | [COLOR lime]{%4}[/COLOR][/B]",
             "url": "{%1}",
             "poster": "{%2}",
@@ -71,25 +71,25 @@
             "next_url": "https://trakt.tv{%1}"
           },
           {
-            "pattern": "<div data-spoiler-movie-id=\"{*}\"><div id=\"tagline\">{%}</div><div id=\"overview\" itemprop=\"description\"><p>{%}</p>{*}trailer\" target=\"_blank\" href=\"{%}\">{*}data-fanart=\"{%}\" data-full-title=\"{%}\"",
-            "name": "[B][COLOR lime]Play Trailer[/COLOR] [COLOR gold]->[/COLOR] {%5}[/B]",
-            "url": "{%3}",
-            "poster": "{%4}",
-			"fanart": "{%4}",
-			"plot": "[COLOR gold]{%1}[/COLOR] | [COLOR gold]{%2}[/COLOR]"
+            "pattern": "trailer\" target=\"_blank\" href=\"{%}\">{*}data-fanart=\"{%}\" data-full-title=\"{%}\"",
+            "name": "[B][COLOR lime]Play Trailer[/COLOR] [COLOR gold]->[/COLOR] {%3}[/B]",
+            "url": "{%1}",
+            "poster": "{%2}",
+			"fanart": "{%2}",
+			"plot": "[COLOR gold]Play Trailer[/COLOR]"
           }
         ]
       }
     },
     {
-      "name": "[B][COLOR gold]Trakt[/COLOR] Anticipated Movies[/B]",
+      "name": "[B][COLOR gold]Trakt[/COLOR] Box Office Movies[/B]",
       "poster": "special://home/addons/plugin.video.trakttrailers/icon.png",
       "fanart": "special://home/addons/plugin.video.trakttrailers/fanart.jpg",
       "items": {
-        "[B][COLOR gold]Trakt[/COLOR] Anticipated Movies[/B]": [
+        "[B][COLOR gold]Trakt[/COLOR] Box Office Movies[/B]": [
           {
-            "site_url": "https://trakt.tv/movies/anticipated",
-            "pattern": "data-movie-id=\"{*}\"{*}<meta content=\"{%}\"{*}<img class=\"real\" data-original=\"{%}\"{*}<h3>{%}<span class=\"year\">{%}</span></h3>",
+            "site_url": "https://trakt.tv/movies/boxoffice",
+            "pattern": "data-movie-id={*}<meta content=\"{%}\"{*}<img class=\"real\" data-original=\"{%}\"{*}<h3>{%}<span class=\"year\">{%}</span></h3>",
             "name": "[B]{%3} | [COLOR lime]{%4}[/COLOR][/B]",
             "url": "{%1}",
             "poster": "{%2}",
@@ -98,7 +98,7 @@
             "next_url": "https://trakt.tv{%1}"
           },
           {
-            "pattern": "<div data-spoiler-movie-id=\"{*}\"><div id=\"tagline\">{%}</div><div id=\"overview\" itemprop=\"description\"><p>{%}</p>{*}trailer\" target=\"_blank\" href=\"{%}\">{*}data-fanart=\"{%}\" data-full-title=\"{%}\"",
+            "pattern": "<div data-spoiler-movie-id={*}tagline\">{%}</div>{*}</div><p>{%}</p>{*}href=\"{%}\">{*}data-fanart=\"{%}\" data-full-title=\"{%}\"",
             "name": "[B][COLOR lime]Play Trailer[/COLOR] [COLOR gold]->[/COLOR] {%5}[/B]",
             "url": "{%3}",
             "poster": "{%4}",
@@ -108,6 +108,7 @@
         ]
       }
     },
+    
     {
       "name": "[B][COLOR gold]Trakt[/COLOR] TVShow Search[/B]",
       "poster": "special://home/addons/plugin.video.trakttrailers/icon.png",
@@ -117,18 +118,18 @@
         "Search": [
           {
             "site_url": "https://trakt.tv/search/shows?query=supernatural",
-            "pattern": "data-show-id=\"{*}\"{*}<meta content=\"{%}\"{*}<img class=\"real\" data-original=\"{%}\"{*}<h3>{%}<span class=\"year\">{%}</span></h3>",
+            "pattern": "data-show-id={*}data-url={*}<meta content=\"{%}\"{*}<meta content=\"{%}\"{*}<h3>{%}<span class=\"year\">{%}</span></h3>",
             "name": "[B]{%3} | [COLOR lime]{%4}[/COLOR][/B]",
             "url": "{%1}",
             "poster": "{%2}",
 			"fanart": "{%2}"
           },
           {
-            "pattern": "<section data-fanart=\"{%}\"{*}<h1>{%}<span class=\"year\">{%}</span>{*}itemprop=\"description\"><p>{%}</p></div>{*}trailer\" target=\"_blank\" href=\"{%}\">",
-            "name": "[B][COLOR lime]Play Trailer[/COLOR] [COLOR gold]->[/COLOR] {%2} | [COLOR lime]{%3}[/COLOR][/B]",
+            "pattern": "<h1>{%}<span class=\"year\">{%}</span>{*}data-original=\"{%}\"{*}</div><p>{%}</p></div>{*}href=\"{%}\"><div",
+            "name": "[B][COLOR lime]Play Trailer[/COLOR] [COLOR gold]->[/COLOR] {%1} | [COLOR lime]{%2}[/COLOR][/B]",
             "url": "{%5}",
-            "poster": "{%1}",
-			"fanart": "{%1}",
+            "poster": "{%3}",
+			"fanart": "{%3}",
 			"plot": "[COLOR gold]{%4}[/COLOR]"
           }
         ]
@@ -142,7 +143,7 @@
         "[B][COLOR gold]Trakt[/COLOR] Trending TVShows[/B]": [
           {
             "site_url": "https://trakt.tv/shows/trending",
-            "pattern": "data-show-id=\"{*}\"{*}<meta content=\"{%}\"{*}<img class=\"real\" data-original=\"{%}\"{*}<h3>{%}<span class=\"year\">{%}</span></h3>",
+            "pattern": "data-show-id={*}<meta content=\"{%}\"{*}<meta content=\"{%}\"{*}<h3>{%}<span{*}year\">{%}</span></h3>",
             "name": "[B]{%3} | [COLOR lime]{%4}[/COLOR][/B]",
             "url": "{%1}",
             "poster": "{%2}",
@@ -151,11 +152,11 @@
             "next_url": "https://trakt.tv{%1}"
           },
           {
-            "pattern": "<section data-fanart=\"{%}\"{*}<h1>{%}<span class=\"year\">{%}</span>{*}itemprop=\"description\"><p>{%}</p></div>{*}trailer\" target=\"_blank\" href=\"{%}\">",
-            "name": "[B][COLOR lime]Play Trailer[/COLOR] [COLOR gold]->[/COLOR] {%2} | [COLOR lime]{%3}[/COLOR][/B]",
+            "pattern": "<h1>{%}<span class=\"year\">{%}</span>{*}data-original=\"{%}\"{*}</div><p>{%}</p></div>{*}href=\"{%}\"><div",
+            "name": "[B][COLOR lime]Play Trailer[/COLOR] [COLOR gold]->[/COLOR] {%1} | [COLOR lime]{%2}[/COLOR][/B]",
             "url": "{%5}",
-            "poster": "{%1}",
-			"fanart": "{%1}",
+            "poster": "{%3}",
+			"fanart": "{%3}",
 			"plot": "[COLOR gold]{%4}[/COLOR]"
           }
         ]
@@ -169,7 +170,7 @@
         "[B][COLOR gold]Trakt[/COLOR] Popular TVShows[/B]": [
           {
             "site_url": "https://trakt.tv/shows/popular",
-            "pattern": "data-show-id=\"{*}\"{*}<meta content=\"{%}\"{*}<img class=\"real\" data-original=\"{%}\"{*}<h3>{%}<span class=\"year\">{%}</span></h3>",
+            "pattern": "data-show-id={*}<meta content=\"{%}\"{*}<meta content=\"{%}\"{*}<h3>{%}<span{*}year\">{%}</span></h3>",
             "name": "[B]{%3} | [COLOR lime]{%4}[/COLOR][/B]",
             "url": "{%1}",
             "poster": "{%2}",
@@ -178,25 +179,25 @@
             "next_url": "https://trakt.tv{%1}"
           },
           {
-            "pattern": "<section data-fanart=\"{%}\"{*}<h1>{%}<span class=\"year\">{%}</span>{*}itemprop=\"description\"><p>{%}</p></div>{*}trailer\" target=\"_blank\" href=\"{%}\">",
-            "name": "[B][COLOR lime]Play Trailer[/COLOR] [COLOR gold]->[/COLOR] {%2} | [COLOR lime]{%3}[/COLOR][/B]",
+            "pattern": "<h1>{%}<span class=\"year\">{%}</span>{*}data-original=\"{%}\"{*}</div><p>{%}</p></div>{*}href=\"{%}\"><div",
+            "name": "[B][COLOR lime]Play Trailer[/COLOR] [COLOR gold]->[/COLOR] {%1} | [COLOR lime]{%2}[/COLOR][/B]",
             "url": "{%5}",
-            "poster": "{%1}",
-			"fanart": "{%1}",
+            "poster": "{%3}",
+			"fanart": "{%3}",
 			"plot": "[COLOR gold]{%4}[/COLOR]"
           }
         ]
       }
     },
     {
-      "name": "[B][COLOR gold]Trakt[/COLOR] Anticipated TVShows[/B]",
+      "name": "[B][COLOR gold]Trakt[/COLOR] Weekly Watched TVShows[/B]",
       "poster": "special://home/addons/plugin.video.trakttrailers/icon.png",
       "fanart": "special://home/addons/plugin.video.trakttrailers/fanart.jpg",
       "items": {
-        "[B][COLOR gold]Trakt[/COLOR] Anticipated TVShows[/B]": [
+        "[B][COLOR gold]Trakt[/COLOR] Weekly Watched TVShows[/B]": [
           {
-            "site_url": "https://trakt.tv/shows/anticipated",
-            "pattern": "data-show-id=\"{*}\"{*}<meta content=\"{%}\"{*}<img class=\"real\" data-original=\"{%}\"{*}<h3>{%}<span class=\"year\">{%}</span></h3>",
+            "site_url": "https://trakt.tv/shows/watched/weekly",
+            "pattern": "data-show-id={*}<meta content=\"{%}\"{*}<meta content=\"{%}\"{*}<h3>{%}<span{*}year\">{%}</span></h3>",
             "name": "[B]{%3} | [COLOR lime]{%4}[/COLOR][/B]",
             "url": "{%1}",
             "poster": "{%2}",
@@ -205,11 +206,11 @@
             "next_url": "https://trakt.tv{%1}"
           },
           {
-            "pattern": "<section data-fanart=\"{%}\"{*}<h1>{%}<span class=\"year\">{%}</span>{*}itemprop=\"description\"><p>{%}</p></div>{*}trailer\" target=\"_blank\" href=\"{%}\">",
-            "name": "[B][COLOR lime]Play Trailer[/COLOR] [COLOR gold]->[/COLOR] {%2} | [COLOR lime]{%3}[/COLOR][/B]",
+            "pattern": "<h1>{%}<span class=\"year\">{%}</span>{*}data-original=\"{%}\"{*}</div><p>{%}</p></div>{*}href=\"{%}\"><div",
+            "name": "[B][COLOR lime]Play Trailer[/COLOR] [COLOR gold]->[/COLOR] {%1} | [COLOR lime]{%2}[/COLOR][/B]",
             "url": "{%5}",
-            "poster": "{%1}",
-			"fanart": "{%1}",
+            "poster": "{%3}",
+			"fanart": "{%3}",
 			"plot": "[COLOR gold]{%4}[/COLOR]"
           }
         ]
